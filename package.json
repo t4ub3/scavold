@@ -1,0 +1,15 @@
+{
+  "name": "scavold",
+  "version": "1.0.0",
+  "description": "Vue based style and components scaffold",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Vue",
+    "scaffold"
+  ],
+  "author": "JuliaNeumann, t4ub3",
+  "license": "MIT"
+}
