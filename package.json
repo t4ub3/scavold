@@ -11,5 +11,8 @@
     "scaffold"
   ],
   "author": "JuliaNeumann, t4ub3",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.18.1"
+  }
 }
