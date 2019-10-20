@@ -13,6 +13,11 @@
   "author": "JuliaNeumann, t4ub3",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^3.18.1"
+    "@babel/core": "^7.6.4",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "lerna": "^3.18.1",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10"
   }
 }
