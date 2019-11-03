@@ -1,9 +1,11 @@
 {
   "name": "scavold",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Vue based style and components scaffold",
   "main": "index.js",
   "scripts": {
+    "bootstrap": "npm i && lerna bootstrap",
+    "storybook": "start-storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,12 +14,23 @@
   ],
   "author": "JuliaNeumann, t4ub3",
   "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/vue": "^5.2.5",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
+    "css-loader": "^3.2.0",
     "lerna": "^3.18.1",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2"
   }
