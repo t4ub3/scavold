@@ -1,0 +1,8 @@
+{
+    "name": "@scavold/m-select",
+    "version": "0.0.5",
+    "dependencies": {
+      "@scavold/a-option": "^0.0.1",
+      "@scavold/a-select": "^0.0.1"
+    }
+  }
