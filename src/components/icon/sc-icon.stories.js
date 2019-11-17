@@ -4,7 +4,7 @@ export default {
   title: 'Icon'
 };
 
-export const text = () => ({
+export const basic = () => ({
   components: { ScIcon },
-  template: '<sc-icon></sc-icon>'
+  template: '<sc-icon name="kiwi-bird"></sc-icon>'
 });

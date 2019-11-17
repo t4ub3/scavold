@@ -1,18 +1,26 @@
-<template></template>
+<template>
+    <font-awesome-icon v-if="!iconDefinition && !fetched" 
+                       icon="spinner"
+                       spin>
+    </font-awesome-icon>
+    <font-awesome-icon v-else-if="!iconDefinition"
+                       icon="exclamation">
+    </font-awesome-icon>
+    <font-awesome-icon v-else 
+                       :icon="iconDefinition">
+    </font-awesome-icon>
+</template>
 
 <script>
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-    faExclamation,
-    faSpinnerThird
-} from "@fortawesome/free-solid-svg-icons";
+import { faExclamation, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { camelCase } from "lodash";
 
-library.add([faExclamation, faSpinnerThird]);
+library.add([faExclamation, faSpinner]);
 
 export default {
     name: "sc-icon",
+    components: { FontAwesomeIcon },
     props: {
         name: {
             type: String,
@@ -21,7 +29,7 @@ export default {
         },
         collection: {
             type: String,
-            default: "regular",
+            default: "solid",
             validator: value => {
                 return value.match(/(regular|solid|brand)/);
             }
@@ -31,10 +39,10 @@ export default {
         return {
             fetched: null,
             fetchedIcon: null,
-            iconTypes: {
-                fas: "solid",
-                far: "regular",
-                fal: "light"
+            iconPrefixes: {
+                solid: "fas",
+                regular: "far",
+                brand: "fab"
             }
         };
     },
@@ -43,31 +51,27 @@ export default {
             if (this.fetchedIcon) {
                 return this.fetchedIcon;
             }
-
             if (
                 library.definitions[this.iconPrefix] &&
-                library.definitions[this.iconPrefix][this.iconName]
+                library.definitions[this.iconPrefix][this.name]
             ) {
                 return {
-                    icon: library.definitions[this.iconPrefix][this.iconName],
-                    iconName: this.iconName,
+                    icon: library.definitions[this.iconPrefix][this.name],
+                    iconName: this.name,
                     prefix: this.iconPrefix
                 };
             }
-
             return null;
         },
         iconFileName() {
-            return camelCase(`fa-${this.iconName}`);
-        },
-        iconName() {
-            return Array.isArray(this.icon) ? this.icon[1] : this.icon;
+            let nameParts = this.name.split("-");
+            let pascalCasedName = nameParts.map(
+                element => element.charAt(0).toUpperCase() + element.slice(1)
+            ).join("");
+            return `fa${pascalCasedName}`;
         },
         iconPrefix() {
-            return Array.isArray(this.icon) ? this.icon[0] : "fas";
-        },
-        iconType() {
-            return this.iconTypes[this.iconPrefix];
+            return this.iconPrefixes[this.collection];
         }
     },
     methods: {
@@ -75,17 +79,18 @@ export default {
             this.fetched = false;
             return import(
                 /* webpackChunkName: "fonts/[request]" */
-                `@fortawesome/free-${this.iconType}-svg-icons/${this.iconFileName}.js`
+                `@fortawesome/free-${this.collection}-svg-icons/${this.iconFileName}.js`
             )
                 .then(response => {
                     this.fetched = true;
-
+                    console.log(response)
                     if (response && response.definition) {
                         this.fetchedIcon = response.definition;
                         library.add(response.definition);
                     }
                 })
-                .catch(() => {
+                .catch((error) => {
+                    console.log(error)
                     this.fetched = true;
                 });
         }
@@ -96,36 +101,16 @@ export default {
         }
     },
     watch: {
-        icon() {
+        name() {
+            if (!this.iconDefinition) {
+                this.fetchIcon();
+            }
+        },
+        collection() {
             if (!this.iconDefinition) {
                 this.fetchIcon();
             }
         }
-    },
-    render() {
-        if (!this.iconDefinition) {
-            if (!this.fetched) {
-                return this.$createElement(FontAwesomeIcon, {
-                    props: {
-                        spin: true,
-                        icon: faSpinnerThird
-                    }
-                });
-            }
-
-            return this.$createElement(FontAwesomeIcon, {
-                props: {
-                    icon: faExclamation
-                }
-            });
-        }
-
-        return this.$createElement(FontAwesomeIcon, {
-            props: {
-                ...this.$options.propsData,
-                icon: this.iconDefinition
-            }
-        });
-    }
+    },    
 };
 </script>
