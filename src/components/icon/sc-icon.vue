@@ -83,14 +83,13 @@ export default {
             )
                 .then(response => {
                     this.fetched = true;
-                    console.log(response)
                     if (response && response.definition) {
                         this.fetchedIcon = response.definition;
                         library.add(response.definition);
                     }
                 })
                 .catch((error) => {
-                    console.log(error)
+                    console.warn(error)
                     this.fetched = true;
                 });
         }
