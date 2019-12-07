@@ -26,5 +26,7 @@
         -webkit-box-shadow: inset 0px 0px 3px 0px $text-color;
         -moz-box-shadow: inset 0px 0px 3px 0px $text-color;
         box-shadow: inset 0px 0px 3px 0px $text-color;
+        transition-property: box-shadow;
+        transition-duration: 0.2s;
     }
 }
