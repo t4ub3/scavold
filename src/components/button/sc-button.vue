@@ -1,8 +1,8 @@
 <template>
-  <component :is="tag" class="sc-button">
-    <sc-icon v-if="iconLeft" v-bind="iconLeft"></sc-icon>
+  <component :is="tag" :class="['sc-button', 'sc-button--' + theme]">
+    <sc-icon :class="['sc-button__icon', text ? 'sc-button__icon--left' : '']" v-if="iconLeft" v-bind="iconLeft"></sc-icon>
     {{ text }}
-    <sc-icon v-if="iconRight" v-bind="iconRight"></sc-icon>
+    <sc-icon :class="['sc-button__icon', text ? 'sc-button__icon--right' : '']" v-if="iconRight" v-bind="iconRight"></sc-icon>
   </component>
 </template>
 
@@ -29,6 +29,13 @@
       },
       iconRight: {
         type: Object
+      },
+      theme: {
+        type: String,
+        default: "dark",
+        validator: value => {
+          value.match( /^(bright|dark)$/ );
+        }
       }
     }
   }
@@ -39,5 +46,14 @@
 
   .sc-button {
     @include sa-button;
+
+    &__icon {
+      &--left {
+        padding-right: $distance-xs;
+      }
+      &--right {
+        padding-left: $distance-xs;
+      }
+    }
   }
 </style>

@@ -1,5 +1,30 @@
-@import 'variables';
+@import '_variables';
+@import '_typography';
 
 @mixin sa-button {
-    color: $text-color;
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-block;
+    border-radius: $border-radius-default;
+    border: none;
+    padding: $distance-s;
+    @include typo-m;
+    cursor: pointer;
+
+    &--dark {
+        color: $text-color-negative;
+        background-color: $color-main-dark;
+    }
+    &--bright {
+        color: $text-color;
+        background-color: $color-main-bright;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        -webkit-box-shadow: inset 0px 0px 3px 0px $text-color;
+        -moz-box-shadow: inset 0px 0px 3px 0px $text-color;
+        box-shadow: inset 0px 0px 3px 0px $text-color;
+    }
 }
