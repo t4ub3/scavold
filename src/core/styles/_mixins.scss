@@ -6,7 +6,7 @@
     -webkit-appearance: none;
     display: inline-block;
     border-radius: $border-radius-default;
-    border: none;
+    border: 2px solid transparent;
     padding: $distance-s;
     @include typo-m;
     cursor: pointer;
@@ -14,19 +14,27 @@
     &--dark {
         color: $text-color-negative;
         background-color: $color-main-dark;
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: lighten($color-main-dark, 45%);
+            transition: border-color 0.5s;
+        }
     }
     &--bright {
         color: $text-color;
         background-color: $color-main-bright;
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: darken($color-main-bright, 25%);
+            transition: border-color 0.5s;
+        }
     }
+}
 
-    &:hover,
-    &:active,
-    &:focus {
-        -webkit-box-shadow: inset 0px 0px 3px 0px $text-color;
-        -moz-box-shadow: inset 0px 0px 3px 0px $text-color;
-        box-shadow: inset 0px 0px 3px 0px $text-color;
-        transition-property: box-shadow;
-        transition-duration: 0.2s;
+@mixin sa-input-radio {
+    input {
+        display: none;
     }
 }
