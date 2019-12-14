@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" :class="['sc-button', 'sc-button--' + theme]">
+  <component :is="tag" class="sc-button">
     <sc-icon :class="['sc-button__icon', text ? 'sc-button__icon--left' : '']" v-if="iconLeft" v-bind="iconLeft"></sc-icon>
     {{ text }}
     <sc-icon :class="['sc-button__icon', text ? 'sc-button__icon--right' : '']" v-if="iconRight" v-bind="iconRight"></sc-icon>
@@ -29,13 +29,6 @@
       },
       iconRight: {
         type: Object
-      },
-      theme: {
-        type: String,
-        default: "dark",
-        validator: value => {
-          value.match( /^(bright|dark)$/ );
-        }
       }
     }
   }

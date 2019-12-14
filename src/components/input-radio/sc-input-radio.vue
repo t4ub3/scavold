@@ -1,21 +1,21 @@
 <template>
-  <div class="sc-input-radio">
-    <input class="sc-input-radio sc-input-radio__input"
-            type="radio"
+  <label class="sc-input-radio"
+         :for="id">
+    <input class="sc-input-radio__input"
+           type="radio"
            :value="value"
            :name="name"
-           @change="$emit('select', $event.target.value)"
-           v-model="selectedValue" />
-    <label class="sc-input-radio sc-input-radio__label">
-      {{ label }}
-    </label>
-  </div>
+           :id="id"
+           :disabled="disabled"
+           :checked="selectedValue === value"
+           @change="$emit('select', $event.target.value)" />
+    <div class="sc-input-radio__label">{{ label }}</div>
+  </label>
 </template>
 
 <script>
   export default {
     name: "sc-input-radio",
-    components: {  },
     model: {
       prop: "selectedValue",
       event: "select"
@@ -34,6 +34,14 @@
       },
       selectedValue: {
         type: String
+      },
+      id: {
+        type: String,
+        default: () => "sc-input-radio_" + Math.random().toString(36).substring(2, 15)
+      },
+      disabled: {
+        type: Boolean,
+        default: false
       }
     }
   }
@@ -44,22 +52,5 @@
 
   .sc-input-radio {
     @include sa-input-radio;
-
-    &__input {
-      display: none;
-    }
-
-    &__label {
-      padding-left: 24px;
-      position: relative;
-      &::before {
-        position: absolute;
-        left: $distance-xs;
-        top: $distance-xs;
-        height: 10px;
-        width: 10px;
-        border: solid 2px black;
-      }
-    }
   }
 </style>

@@ -35,13 +35,3 @@ export const icons = () => ({
   <sc-button title="Icon Only" :iconLeft="{name: 'kiwi-bird'}"></sc-button>
 </div>`
 });
-
-export const themes = () => ({
-  components: { ScButton },
-  template: `<div>
-  <sc-button text="Dark Theme"></sc-button>
-  <br/>
-  <br/>
-  <sc-button theme="bright" text="Bright Theme"></sc-button>
-</div>`
-});

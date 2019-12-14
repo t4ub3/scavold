@@ -9,6 +9,14 @@ export const typical = () => ({
   template: '<sc-input-radio label="Input Radio Typical" value="radio_typical"></sc-input-radio>'
 });
 
+export const disabled = () => ({
+  components: { ScInputRadio },
+  template: `<div><sc-input-radio label="Input Radio Disabled" value="radio_disabled" :disabled="true"></sc-input-radio>
+            <br/>
+            <sc-input-radio label="Input Radio Disabled Checked" value="radio_disabled_checked" :disabled="true" selectedValue="radio_disabled_checked"></sc-input-radio>
+            </div>`
+});
+
 export const vModel = () => ({
   components: { ScInputRadio },
   data: () => {

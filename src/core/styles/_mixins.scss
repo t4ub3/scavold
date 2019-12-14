@@ -2,39 +2,64 @@
 @import '_typography';
 
 @mixin sa-button {
+    @include typo-m;
+
     appearance: none;
     -webkit-appearance: none;
     display: inline-block;
     border-radius: $border-radius-default;
     border: 2px solid transparent;
     padding: $distance-s;
-    @include typo-m;
     cursor: pointer;
-
-    &--dark {
-        color: $text-color-negative;
-        background-color: $color-main-dark;
-        &:hover,
-        &:active,
-        &:focus {
-            border-color: lighten($color-main-dark, 45%);
-            transition: border-color 0.5s;
-        }
-    }
-    &--bright {
-        color: $text-color;
-        background-color: $color-main-bright;
-        &:hover,
-        &:active,
-        &:focus {
-            border-color: darken($color-main-bright, 25%);
-            transition: border-color 0.5s;
-        }
+    color: $text-color-negative;
+    background-color: $color-primary;
+    
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: lighten($color-primary, 45%);
+        transition: border-color 0.5s;
     }
 }
 
 @mixin sa-input-radio {
-    input {
+    display: block;
+
+    &__input {
         display: none;
+    }
+  
+    &__label {
+        display: flex;
+        align-items: baseline;
+
+        &::before {
+            content: "";
+            height: 10px;
+            width: 10px;
+            border: solid 1px black;
+            border-radius: 50%;
+            margin-right: $distance-s;
+            background-color: white;
+            transition: background-color 0.2s;
+        }
+    }
+
+    &__input:checked + &__label::before {
+        background-color: $color-primary;
+        box-shadow: inset 0 0 0 2px white;
+        transition: background-color 0.2s;
+    }
+
+    &__input:disabled + &__label {
+        color: $color-gray-lighter-2;
+
+        &::before {
+            border-color: $color-gray;
+        }
+    }
+
+    &__input:disabled:checked + &__label::before {
+        background-color: $color-gray-lighter-2;
     }
 }
