@@ -31,7 +31,7 @@ export default {
             type: String,
             default: "solid",
             validator: value => {
-                return value.match(/(regular|solid|brand)/);
+                return /(regular|solid|brand)/.test(value);
             }
         }
     },

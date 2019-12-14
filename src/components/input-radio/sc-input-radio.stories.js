@@ -1,8 +1,10 @@
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import ScInputRadio from "./sc-input-radio.vue";
 import { buildTemplate } from "../../../.storybook/helpers";
 
 export default {
-  title: 'Input Radio'
+  title: 'Input Radio',
+  decorators: [withKnobs]
 };
 
 export const typical = () => ({
@@ -30,5 +32,32 @@ export const vModel = () => ({
   template: buildTemplate([
     '<sc-input-radio label="Input Radio 1" value="radio_1" v-model="radioSelection"></sc-input-radio>',
     '<sc-input-radio label="Input Radio 2" value="radio_2" v-model="radioSelection"></sc-input-radio>'
+  ])
+});
+
+export const configurable = () => ({
+  components: { ScInputRadio },
+  props: {
+    label: {
+      default: text('Label', 'Input Label')
+    },
+    value: {
+      default: text('Value', 'input_value')
+    },
+    name: {
+      default: text('Name', 'input_name')
+    },
+    selectedValue: {
+      default: text('Selected Value', 'input_value')
+    },
+    id: {
+      default: text('ID', 'input_123')
+    },
+    disabled: {
+      default: boolean('Disabled', false)
+    }
+  },
+  template: buildTemplate([
+    '<sc-input-radio :label="label" :value="value" :name="name" :selectedValue="selectedValue" :id="id" :disabled="disabled"></sc-input-radio>'
   ])
 });
