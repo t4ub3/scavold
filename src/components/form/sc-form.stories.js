@@ -1,4 +1,5 @@
 import ScForm from "./sc-form.vue";
+import { buildTemplate } from "../../../.storybook/helpers";
 
 export default {
   title: 'Form'
@@ -11,5 +12,7 @@ const formFields = [
 
 export const typical = () => ({
   components: { ScForm },
-  template: `<sc-form :fields='${JSON.stringify(formFields)}'></sc-form>`
+  template: buildTemplate([
+    `<sc-form :fields='${JSON.stringify(formFields)}'></sc-form>`
+  ])
 });

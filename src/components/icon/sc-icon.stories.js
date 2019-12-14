@@ -1,10 +1,13 @@
 import ScIcon from "./sc-icon.vue";
+import { buildTemplate } from "../../../.storybook/helpers";
 
 export default {
   title: 'Icon'
 };
 
-export const basic = () => ({
+export const typical = () => ({
   components: { ScIcon },
-  template: '<sc-icon name="kiwi-bird"></sc-icon>'
+  template: buildTemplate([
+    '<sc-icon name="kiwi-bird"></sc-icon>'
+  ])
 });

@@ -17,7 +17,7 @@
         type: String,
         default: "button",
         validator: value => {
-          value.match( /^(button|a)$/ );
+          return /^(button|a)$/.test(value);
         }
       },
       text: {
