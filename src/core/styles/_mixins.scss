@@ -63,3 +63,26 @@
         background-color: $color-gray-lighter-2;
     }
 }
+
+@mixin sa-input-text {
+    border-radius: $border-radius-default;
+    border: 1px solid black;
+    padding: $distance-xs;
+
+    &:focus,
+    &:hover {
+        border-color: $color-primary;
+        color: $color-primary;
+    }
+
+    &::placeholder {
+        color: $color-primary-lighter-2;
+    }
+
+    &:disabled {
+        background-color: white;
+        border: 1px solid $color-gray-lighter-1;
+        color: $color-gray-lighter-2;
+    }
+    
+}

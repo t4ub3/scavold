@@ -3,7 +3,7 @@ import ScIcon from "./sc-icon.vue";
 import { buildTemplate } from "../../../.storybook/helpers";
 
 export default {
-  title: 'Icon',
+  title: 'Components/Icon',
   decorators: [withKnobs]
 };
 

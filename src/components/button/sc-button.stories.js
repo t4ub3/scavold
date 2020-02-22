@@ -3,7 +3,7 @@ import ScButton from "./sc-button.vue";
 import { buildTemplate } from "../../../.storybook/helpers";
 
 export default {
-  title: 'Button',
+  title: 'Components/Button',
   decorators: [withKnobs]
 };
 

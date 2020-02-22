@@ -3,7 +3,7 @@ import ScInputRadio from "./sc-input-radio.vue";
 import { buildTemplate } from "../../../.storybook/helpers";
 
 export default {
-  title: 'Input Radio',
+  title: 'Components/Input Radio',
   decorators: [withKnobs]
 };
 

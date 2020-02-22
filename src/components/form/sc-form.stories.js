@@ -2,7 +2,7 @@ import ScForm from "./sc-form.vue";
 import { buildTemplate } from "../../../.storybook/helpers";
 
 export default {
-  title: 'Form'
+  title: 'Components/Form'
 };
 
 const formFields = [
