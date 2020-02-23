@@ -1,15 +1,34 @@
 <template>
-  <button class="sc-button">{{text}}</button>
+  <component :is="tag" class="sc-button">
+    <sc-icon :class="['sc-button__icon', text ? 'sc-button__icon--left' : '']" v-if="iconLeft" v-bind="iconLeft"></sc-icon>
+    {{ text }}
+    <sc-icon :class="['sc-button__icon', text ? 'sc-button__icon--right' : '']" v-if="iconRight" v-bind="iconRight"></sc-icon>
+  </component>
 </template>
 
 <script>
+  import ScIcon from "@scavold/icon";
+
   export default {
     name: "sc-button",
+    components: { ScIcon },
     props: {
+      tag: {
+        type: String,
+        default: "button",
+        validator: value => {
+          return /^(button|a)$/.test(value);
+        }
+      },
       text: {
         type: String,
-        required: true,
-        default: "Button"
+        default: ""
+      },
+      iconLeft: {
+        type: Object
+      },
+      iconRight: {
+        type: Object
       }
     }
   }
@@ -19,6 +38,15 @@
   @import '@scavold/core/styles/global';
 
   .sc-button {
-    color: $text-color;
+    @include sa-button;
+
+    &__icon {
+      &--left {
+        padding-right: $distance-xs;
+      }
+      &--right {
+        padding-left: $distance-xs;
+      }
+    }
   }
 </style>

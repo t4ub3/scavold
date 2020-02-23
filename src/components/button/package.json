@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "sc-button.vue",
   "dependencies": {
-    "@scavold/core": "^0.1.0"
+    "@scavold/core": "^0.1.0",
+    "@scavold/icon": "^0.1.0"
   }
 }
