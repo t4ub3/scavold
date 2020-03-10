@@ -2,7 +2,7 @@
 @import '_typography';
 
 @mixin sa-button {
-    @include typo-m;
+    @include typo-l;
 
     appearance: none;
     -webkit-appearance: none;
@@ -66,13 +66,13 @@
 
 @mixin sa-input-text {
     border-radius: $border-radius-default;
-    border: 1px solid black;
+    border: 2px solid $color-gray-darker-2;
     padding: $distance-xs;
 
     &:focus,
     &:hover {
-        border-color: $color-primary;
-        color: $color-primary;
+        border-color: $color-primary-darker-1;
+        color: $color-primary-darker-1;
     }
 
     &::placeholder {
@@ -81,8 +81,12 @@
 
     &:disabled {
         background-color: white;
-        border: 1px solid $color-gray-lighter-1;
+        border-color: $color-gray-lighter-1;
         color: $color-gray-lighter-2;
+    }
+
+    &--error {
+        border-color: $color-danger;
     }
     
 }
