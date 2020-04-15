@@ -1,9 +1,9 @@
 @mixin typo-xs {
-  font-size: 12/16rem;
+  font-size: #{(12/16)}rem;
 }
 
 @mixin typo-s {
-   font-size: 14/16rem;
+  font-size: #{(14/16)}rem;
 }
 
 @mixin typo-m {
@@ -11,9 +11,9 @@
 }
 
 @mixin typo-l {
-  font-size: 18/16rem;
+  font-size: #{(18/16)}rem;
 }
 
 @mixin typo-xl {
-  font-size: 20/16rem;
+  font-size: #{(20/16)}rem;
 }

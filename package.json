@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "npm i && lerna bootstrap",
-    "storybook": "start-storybook",
+    "storybook": "start-storybook -s ./assets",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

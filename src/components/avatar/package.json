@@ -1,0 +1,8 @@
+{
+  "name": "@scavold/avatar",
+  "version": "0.1.0",
+  "main": "sc-avatar.vue",
+  "dependencies": {
+    "@scavold/core": "^0.1.0"
+  }
+}
