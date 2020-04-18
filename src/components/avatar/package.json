@@ -4,5 +4,23 @@
   "main": "sc-avatar.vue",
   "dependencies": {
     "@scavold/core": "^0.1.0"
-  }
+  },
+  "description": "Avatar Vue Component",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/t4ub3/scavold.git"
+  },
+  "keywords": [
+    "Vue",
+    "scavold"
+  ],
+  "author": "JuliaNeumann, t4ub3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t4ub3/scavold/issues"
+  },
+  "homepage": "https://github.com/t4ub3/scavold#readme"
 }

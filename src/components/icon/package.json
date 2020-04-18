@@ -8,5 +8,23 @@
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/vue-fontawesome": "^0.1.8"
-  }
+  },
+  "description": "Icon Vue Component",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/t4ub3/scavold.git"
+  },
+  "keywords": [
+    "Vue",
+    "scavold"
+  ],
+  "author": "JuliaNeumann, t4ub3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t4ub3/scavold/issues"
+  },
+  "homepage": "https://github.com/t4ub3/scavold#readme"
 }
