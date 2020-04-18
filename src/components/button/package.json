@@ -1,10 +1,10 @@
 {
   "name": "@scavold/button",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "sc-button.vue",
   "dependencies": {
-    "@scavold/core": "^0.1.0",
-    "@scavold/icon": "^0.1.0"
+    "@scavold/core": "^0.1.1",
+    "@scavold/icon": "^0.1.1"
   },
   "description": "Button Vue Component",
   "scripts": {
