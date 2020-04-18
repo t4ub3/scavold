@@ -1,5 +1,6 @@
 {
   "name": "@scavold/form",
+  "private": true,
   "version": "0.1.0",
   "main": "sc-form.vue",
   "dependencies": {

@@ -1,5 +1,6 @@
 {
   "name": "@scavold/input-radio",
+  "private": true,
   "version": "0.1.0",
   "main": "sc-input-radio.vue",
   "dependencies": {

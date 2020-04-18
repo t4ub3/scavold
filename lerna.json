@@ -3,5 +3,5 @@
     "src/components/*",
     "src/*"
   ],
-  "version": "0.0.0"
+  "version": "independent"
 }
