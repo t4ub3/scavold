@@ -32,6 +32,14 @@ export const icons = () => ({
   ])
 });
 
+export const themes = () => ({
+  components: { ScButton },
+  template: buildTemplate([
+    '<sc-button theme="primary" text="Primary"></sc-button>',
+    '<sc-button theme="plain" text="Plain"></sc-button>'
+  ])
+});
+
 export const configurable = () => ({
   components: { ScButton },
   props: {
@@ -46,9 +54,12 @@ export const configurable = () => ({
     },
     iconRight: {
       default: object('Icon Ŕight', null)
+    },
+    theme: {
+      default: select('Theme', ['primary', 'plain'], 'primary')
     }
   },
   template:  buildTemplate([
-    '<sc-button :tag="tag" :text="text" :iconLeft="iconLeft" :iconRight="iconRight"></sc-button>'
+    '<sc-button :tag="tag" :text="text" :iconLeft="iconLeft" :iconRight="iconRight" :theme="theme"></sc-button>'
   ])
 });
