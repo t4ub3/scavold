@@ -100,13 +100,15 @@ export default {
         }
     },
     watch: {
-        name() {
-            if (!this.iconDefinition) {
+        name(newName) {
+            if (!this.iconDefinition || newName != this.iconDefinition.iconName) {
+                this.fetchedIcon = null;
                 this.fetchIcon();
             }
         },
-        collection() {
-            if (!this.iconDefinition) {
+        collection(newCollection) {
+            if (!this.iconDefinition || this.iconPrefixes[newCollection] != this.iconDefinition.iconPrefix) {
+                this.fetchedIcon = null;
                 this.fetchIcon();
             }
         }
