@@ -1,0 +1,11 @@
+@mixin height-transition {
+  .height-enter-active,
+  .height-leave-active {
+    transition: max-height 0.5s ease;
+    max-height: 100vh;
+  }
+  .height-enter,
+  .height-leave-to {
+    max-height: 0px;
+  }
+}
