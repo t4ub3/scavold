@@ -1,10 +1,10 @@
 {
   "name": "@scavold/form",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "sc-form.vue",
   "dependencies": {
-    "@scavold/core": "^0.1.1",
-    "@scavold/input-radio": "^0.1.1"
+    "@scavold/core": "^0.1.2",
+    "@scavold/input-radio": "^0.1.2"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@scavold/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "core stylings for scavold projects (SCSS)",
   "main": "styles/global.scss",
   "scripts": {

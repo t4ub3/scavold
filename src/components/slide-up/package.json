@@ -1,11 +1,11 @@
 {
   "name": "@scavold/slide-up",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue Container Component for Sliding up Content at the Bottom of a View",
   "main": "sc-slide-up.vue",
   "dependencies": {
-    "@scavold/core": "^0.1.1",
-    "@scavold/button": "^0.2.0"
+    "@scavold/button": "^0.2.1",
+    "@scavold/core": "^0.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

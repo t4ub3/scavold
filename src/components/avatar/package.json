@@ -1,9 +1,9 @@
 {
   "name": "@scavold/avatar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "sc-avatar.vue",
   "dependencies": {
-    "@scavold/core": "^0.1.1"
+    "@scavold/core": "^0.1.2"
   },
   "description": "Avatar Vue Component",
   "scripts": {

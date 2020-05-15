@@ -1,9 +1,9 @@
 {
   "name": "@scavold/demo-components",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "",
   "dependencies": {
-    "@scavold/core": "^0.1.1"
+    "@scavold/core": "^0.1.2"
   }
 }
